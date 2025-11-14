@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2025 [bitryon.io]
- * Licensed under the Elastic License 2.0
- * https://www.elastic.co/licensing/elastic-license
- */
 package io.bitryon.logger.spring;
 
 import java.lang.reflect.Method;
