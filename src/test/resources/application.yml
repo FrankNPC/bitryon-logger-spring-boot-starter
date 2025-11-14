@@ -1,0 +1,53 @@
+
+bitryon:
+  logger:
+    file-name: ./logs/${spring.application.name} # will be like  ./logs/bitryon-logging-integration-java-spring-example.20250415-161023-565.0.log
+    file-max-length: 536870912
+    print-stdout: true # print to console
+    print-file: true # write to file
+    log-date-time-format: yyyy-MM-dd HH:mm:ss.SSS # UTC. the time on the head of the log. Leave blank will print System.currentTimeMillis
+    log-async: true # false blocking IO; true NIO write files, it could lose part of logs if JVM crashes
+    log-light: true # full step info, or light. true: MedicController.java#io.bitryon.web.controller.MedicController#query#123; no thread info, type JSON->J, false: #.MedicController#query#123 [the sanitizer-patterns may be slightly different].
+    log-pretty: true # print pretty json and log, by new line and intends. close it in prd if needed.
+    log-sanitizer-patterns: >
+      /JSON/*Service*.java*.service.*UserService*#*/*/MASK(driverLisenceId)/*/MASK$2(name)//SKIP(birthday),
+      /JSON/*MedicService*#*/*/MASK(driverLisenceId)/*/MASK$2(name)//SKIP(birthday),
+      /JSON/*.java*.Medic*#*/*/MASK$4(deceases)/yyyy-MM-dd HH:mm:ss.ssss/DATE_FORMATER(timeCreated),
+      /HTTP/*LoggingHttpRequestWebReader#readHttpRequest*/*/MASK(driverLisenceId)/*/MASK$2(name)//SKIP(birthday) 
+
+  app-node:
+    http-header-id-type: 1 # write log/trace id to the http response header; 0 default no write header, 1 trace id, 2 step log id
+    application-name: ${spring.application.name}
+    host-id: node-123.test.test # unique, with file to identify unique file
+
+  github: 
+    host: https://github.com/
+    source-paths: > 
+      src/main/java
+    repository: RepoOwner/${spring.application.name} # project on github
+    branch: main
+    commit: xxxxxxx
+
+  boot-info: # for info purpose, bitryon don't use it
+    version: 1.2.3 # the version of the app.
+    internal-ip: 12.2.2.2
+    external-ip: 12.2.2.2
+    program: 1.2.2-1231321.jar
+    region: use-1
+    platform: 
+      cloud: aws
+
+logging:
+  file.name: log/${spring.application.name}.log
+  file.attern: log/${spring.application.name}-%d{yyyy-MM-dd-HH-mm}-%i.log
+  level: 
+    root: DEBUG
+    org.apache.coyote.http11: OFF
+    jdk.event.security: OFF
+    org.apache.http: OFF
+    org.apache.hc: OFF
+
+
+  local: # will red to LocalConfiguration
+    app-key: # app key for the application
+    url-log-sample: https://dev-portal.bitryon.io/log_sample/pull # url for the samples. dev and prd would be diff
