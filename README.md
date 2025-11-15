@@ -1,5 +1,5 @@
 
-![Java](https://img.shields.io/badge/Java-9+-blue?logo=java)
+![Java](https://img.shields.io/badge/Java-9+-orange?logo=java)
 ![Maven Central](https://img.shields.io/badge/Maven%20Central-available-blue?logo=apachemaven)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-brightgreen?logo=springboot)
 
