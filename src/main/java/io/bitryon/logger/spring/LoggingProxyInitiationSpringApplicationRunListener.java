@@ -4,7 +4,7 @@ import org.springframework.boot.ConfigurableBootstrapContext;
 import org.springframework.boot.SpringApplicationRunListener;
 
 /**
- * Used to load LoggingProxyInitiation in spring META-INF/spring.factories before any classes loaded. Or can do it in main method. See bitryon-logger/README.md and bitryon-logging-integration-java-spring-example
+ * Used to load LoggingProxyInitiation in spring META-INF/spring.factories before any classes loaded. Or can do it in main method. See bitryon-logger/README.md and bitryon-logging-java-spring-example
  */
 public class LoggingProxyInitiationSpringApplicationRunListener implements SpringApplicationRunListener {
 	
