@@ -29,5 +29,3 @@ See [ExampleWebServerConfiguration](https://github.com/FrankNPC/bitryon-logging-
 
  
 ### see example [bitryon-logging-java-spring-example](https://github.com/FrankNPC/bitryon-logging-examples/tree/master/bitryon-logging-java-spring-example) 
-
-![Screenshot trace](./Screenshot-trace.png)
