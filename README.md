@@ -22,10 +22,10 @@
     -  If there is no configs from spring, it will go to LoggerFactory and bitryon_logger.properties to get the LoggerProvider as fallback
 
  - 3, configure http client by adding LoggingHttpClientHeaderWriterInterceptor to write header HTTP_HEADER_STEP_LOG_ID(X-Step-Log-Id), so the next app/service/web-server can pick it up. 
-See [UserServiceSubscriber](https://github.com/FrankNPC/bitryon-logging-examples/blob/master/bitryon-logging-java-spring-example/src/main/java/io/bitryon/example/web/config/UserServiceSubscriber.java)
+See [UserServiceSubscriber](https://github.com/FrankNPC/bitryon-logging-tracing-examples/blob/master/bitryon-logging-java-spring-example/src/main/java/io/bitryon/example/web/config/UserServiceSubscriber.java)
 
  - 4, configure web server by adding FilterRegistrationBean< LoggingHttpRequestWebFilter > to pick up header HTTP_HEADER_STEP_LOG_ID(X-Step-Log-Id) from the http request. 
-See [ExampleWebServerConfiguration](https://github.com/FrankNPC/bitryon-logging-examples/blob/master/bitryon-logging-java-spring-example/src/main/java/io/bitryon/example/web/config/ExampleWebServerConfiguration.java)
+See [ExampleWebServerConfiguration](https://github.com/FrankNPC/bitryon-logging-tracing-examples/blob/master/bitryon-logging-java-spring-example/src/main/java/io/bitryon/example/web/config/ExampleWebServerConfiguration.java)
 
  
-### see example [bitryon-logging-java-spring-example](https://github.com/FrankNPC/bitryon-logging-examples/tree/master/bitryon-logging-java-spring-example) 
+### see example [bitryon-logging-java-spring-example](https://github.com/FrankNPC/bitryon-logging-tracing-examples/tree/master/bitryon-logging-java-spring-example) 
